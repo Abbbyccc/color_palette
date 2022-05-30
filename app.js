@@ -32,6 +32,7 @@ function changeColor() {
     }
 }
 
+
 function giveTetrad() {
     let colors = tinycolor(createRandomHex()).tetrad();
     const colorsHex = colors.map(function (t) { return t.toHexString(); })
@@ -40,6 +41,7 @@ function giveTetrad() {
         label_ele[i].textContent = colorsHex[i]
     }
 }
+
 
 
 function giveAnalogous() {
@@ -63,9 +65,9 @@ function copycolor() {
             document.execCommand('copy')
             document.body.removeChild(el)
 
-            copy_colours[i].innerHTML = "copied"
+            copy_colours[i].innerHTML = "Copied"
             setTimeout(() => {
-                copy_colours[i].innerHTML = "copy";
+                copy_colours[i].innerHTML = "Copy";
             }, 1500);
         }
     }
