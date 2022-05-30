@@ -12,6 +12,7 @@ function createRandomHex() {
     return hex
 }
 
+
 const giveColour = function giveColour() {
     for (let i = 0; i < colour_elements.length; i++) {
         let hexNum = createRandomHex()
@@ -19,6 +20,7 @@ const giveColour = function giveColour() {
         label_ele[i].innerHTML = hexNum;
     }
 }
+
 
 function changeColor() {
     for (let i = 0; i < colour_inputs.length; i++) {
@@ -30,11 +32,37 @@ function changeColor() {
     }
 }
 
+function giveTetrad() {
+    let colors = tinycolor(createRandomHex()).tetrad();
+    const colorsHex = colors.map(function (t) { return t.toHexString(); })
+    for (let i = 0; i < colour_elements.length; i++) {
+        colour_elements[i].style.backgroundColor = colorsHex[i]
+        label_ele[i].textContent = colorsHex[i]
+    }
+}
+
+
+function giveAnalogous() {
+    let colors = tinycolor(createRandomHex()).analogous();
+    const colorsHex = colors.map(function (t) { return t.toHexString(); })
+    for (let i = 0; i < colour_elements.length; i++) {
+        colour_elements[i].style.backgroundColor = colorsHex[i]
+        label_ele[i].textContent = colorsHex[i]
+    }
+}
+
 function copycolor() {
+
     for (let i = 0; i < copy_colours.length; i++) {
         copy_colours[i].onclick = function () {
-            colour_inputs[i].select();
-            document.execCommand("copy");
+            const text = label_ele[i].innerHTML;
+            const el = document.createElement('textarea')
+            el.value = text;
+            document.body.appendChild(el)
+            el.select()
+            document.execCommand('copy')
+            document.body.removeChild(el)
+
             copy_colours[i].innerHTML = "copied"
             setTimeout(() => {
                 copy_colours[i].innerHTML = "copy";
@@ -42,8 +70,6 @@ function copycolor() {
         }
     }
 }
-
-
 changeColor()
 giveColour()
 copycolor()
@@ -57,12 +83,3 @@ document.addEventListener("keypress", function (event) {
 })
 document.querySelector(".refresh_button").addEventListener("click", giveColour);
 
-
-function createJson() {
-    let jsonData = []
-    for (let i = 0; i < colour_inputs.length; i++) {
-        jsonData += colour_inputs[i].value
-
-    }
-    console.log(jsonData)
-}

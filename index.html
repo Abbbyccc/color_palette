@@ -5,11 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colour Palette</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.4.2/tinycolor.min.js"
+        integrity="sha512-+aXA9mgbUvFe0ToTlbt8/3vT7+nOgUmFw29wfFCsGoh8AZMRSU0p4WtOvC1vkF2JBrndPN2TuNZsHPAKPPxe8Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <title>Colour Palette</title>
 </head>
 
 <body>
@@ -17,7 +20,7 @@
         <h1>Color Generator</h1>
     </header>
     <main>
-        <h2>Please press <button class="refresh_button">Space</button> to generate new colours</h2>
+        <h2>Please press <button class="refresh_button">Space</button> to generate random colours</h2>
 
         <section class="colours">
             <div class="colour">
@@ -50,6 +53,9 @@
             </div>
 
         </section>
+        <button class="colour_style_btn" onclick="giveColour()">Random Color</button>
+        <button class="colour_style_btn" onclick="giveTetrad()">Tetrad Color</button>
+        <button class="colour_style_btn" onclick="giveAnalogous()">Analogous Color</button>
     </main>
 
     <script src="app.js"></script>
