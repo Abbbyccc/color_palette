@@ -1,1 +1,1 @@
-# color_palette 🎨
+# Color Palette Generator 🎨
