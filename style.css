@@ -125,6 +125,25 @@ input {
     font-family: 'Abril Fatface', sans-serif;
 }
 
+a {
+    padding: 0.8rem;
+    background-color: #02182B;
+    color: #FDFFFC;
+    border-radius: 2rem;
+    font-size: 1rem;
+    font-family: 'Abril Fatface', sans-serif;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.download_sec {
+    display: flex;
+    margin-top: 1.5rem;
+    justify-content: center;
+}
+
 @media (min-width:768px) {
     .colours {
         grid-template-columns: repeat(2, 1fr);

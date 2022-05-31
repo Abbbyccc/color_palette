@@ -3,6 +3,7 @@ const colour_inputs = document.querySelectorAll('.colour_input');
 const copy_colours = document.querySelectorAll(".copy_colour");
 const label_ele = document.querySelectorAll(".colour_code");
 
+
 function createRandomHex() {
     const chars = '0123456789ABCDEF';
     let hex = '#'
@@ -21,7 +22,6 @@ const giveColour = function giveColour() {
     }
 }
 
-
 function changeColor() {
     for (let i = 0; i < colour_inputs.length; i++) {
         colour_inputs[i].addEventListener("input", () => {
@@ -32,7 +32,6 @@ function changeColor() {
     }
 }
 
-
 function giveTetrad() {
     let colors = tinycolor(createRandomHex()).tetrad();
     const colorsHex = colors.map(function (t) { return t.toHexString(); })
@@ -41,8 +40,6 @@ function giveTetrad() {
         label_ele[i].textContent = colorsHex[i]
     }
 }
-
-
 
 function giveAnalogous() {
     let colors = tinycolor(createRandomHex()).analogous();
@@ -54,7 +51,6 @@ function giveAnalogous() {
 }
 
 function copycolor() {
-
     for (let i = 0; i < copy_colours.length; i++) {
         copy_colours[i].onclick = function () {
             const text = label_ele[i].innerHTML;
@@ -72,10 +68,26 @@ function copycolor() {
         }
     }
 }
+
+function downloadJson() {
+    const entries = new Map([
+        [`Color 1`, label_ele[0].innerHTML],
+        [`Color 2`, label_ele[1].innerHTML],
+        [`Color 3`, label_ele[2].innerHTML],
+        [`Color 4`, label_ele[3].innerHTML],
+    ]);
+    const obj = Object.fromEntries(entries);
+    var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(obj));
+    var dlAnchorElem = document.getElementById('downloadAnchorElem');
+    dlAnchorElem.setAttribute("href", dataStr);
+    dlAnchorElem.setAttribute("download", "scene.json");
+
+}
+
+
 changeColor()
 giveColour()
 copycolor()
-
 
 
 document.addEventListener("keypress", function (event) {

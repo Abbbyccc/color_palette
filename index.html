@@ -25,14 +25,14 @@
         <section class="colours">
             <div class="colour">
                 <label for="colour_code" class="colour_code"></label>
-                <input type="color" class="colour_input" id="colour_code" />
+                <input type="color" class="colour_input" id="colour_code" name="cheese" />
 
                 <button class="copy_colour">Copy</button>
             </div>
 
             <div class="colour">
                 <label for="colour_code2" class="colour_code"> </label>
-                <input type="color" class="colour_input" id="colour_code2" />
+                <input type="color" class="colour_input" id="colour_code2" name="cheese" />
 
                 <button class="copy_colour">Copy</button>
             </div>
@@ -64,6 +64,13 @@
                 <button class="colour_style_btn" onclick="giveAnalogous()">Analogous Color</button>
             </div>
         </section>
+
+        <section>
+            <div class="download_sec">
+                <a id="downloadAnchorElem" onclick="downloadJson()">Download Json File</a>
+            </div>
+        </section>
+
     </main>
 
     <script src="app.js"></script>
