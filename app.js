@@ -76,11 +76,12 @@ function downloadJson() {
         [`Color 3`, label_ele[2].innerHTML],
         [`Color 4`, label_ele[3].innerHTML],
     ]);
+    console.log(entries)
     const obj = Object.fromEntries(entries);
     var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(obj));
-    var dlAnchorElem = document.getElementById('downloadAnchorElem');
+    var dlAnchorElem = document.getElementById('downloadJSON');
     dlAnchorElem.setAttribute("href", dataStr);
-    dlAnchorElem.setAttribute("download", "scene.json");
+    dlAnchorElem.setAttribute("download", "Color_Palette.json");
 
 }
 
