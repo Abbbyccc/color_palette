@@ -1,1 +1,8 @@
 # 🎨 Color Palette Generator 
+
+
+Built with HTML, CSS & JS
+Code hosted on GitHub
+Deployed to GitHub Pages
+Auto-generate multiple colours
+Allow users to change each colour
