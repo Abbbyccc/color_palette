@@ -1,5 +1,5 @@
 # 🎨 Color Palette Generator 
-abbbyccc.github.io/color_palette/
+[abbbyccc.github.io/color_palette/](https://abbbyccc.github.io/color_palette/)
 
 ## Project Criteria 📌
 ☑️ Built with HTML, CSS & JS <br>
